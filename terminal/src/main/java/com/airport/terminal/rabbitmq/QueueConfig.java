@@ -34,7 +34,6 @@ public class QueueConfig {
 
 	@Bean
 	Binding binding(Queue queue, FanoutExchange exchange) {
-		System.out.println("Binding " + queue + " to exchange");
 		return BindingBuilder.bind(queue).to(exchange);
 	}
 

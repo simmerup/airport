@@ -1,0 +1,14 @@
+airport.rabbitmq:
+  queue: "checkin"
+  exchange: "airport"
+
+spring.rabbitmq:
+  username: guest
+  password: guest
+  host: localhost
+  port: 5672
+
+spring.data.mongodb.authentication-database: admin
+spring.data.mongodb.username: root
+spring.data.mongodb.password: rootpassword
+spring.data.mongodb.database: airport

@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+  rabbitmq:
+      image: rabbitmq:3.8.0-management
+      container_name: rabbitmq
+      environment:
+          RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+          RABBITMQ_DEFAULT_USER: guest
+          RABBITMQ_DEFAULT_PASS: guest
+      ports:
+          - 5672:5672
+          - 15672:15672
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
